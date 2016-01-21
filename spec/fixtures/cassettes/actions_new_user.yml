@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://<USERNAME>:<PASSWORD>@act.sumofus.org/rest/v1/action/
+    body:
+      encoding: UTF-8
+      string: '{"name":"Pablo José Francisco de María","postal":"W1","address1":"The
+        Lodge","address2":"High Street","city":"London","country":"United Kingdom","action_age":"101","action_foo":"Foo","action_bar":"Bar","ignored":"ignore
+        me","page":"foo-bar","email":"1453393208@example.com"}'
+    headers:
+      Content-Type:
+      - application/json
+      Charset:
+      - UTF-8
+  response:
+    status:
+      code: 201
+      message: CREATED
+    headers:
+      Date:
+      - Thu, 21 Jan 2016 16:32:26 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Machine-Id:
+      - web-g02-02.actionkit.com
+      Vary:
+      - Accept,Cookie,Accept-Encoding,User-Agent
+      Location:
+      - https://act.sumofus.org/rest/v1/petitionaction/60078399/
+      Set-Cookie:
+      - sid=k0dfnqu79v7v6zgtjzlena7rki3bg8d4; expires=Fri, 22-Jan-2016 00:20:09 GMT;
+        httponly; Max-Age=28800; Path=/
+    body:
+      encoding: UTF-8
+      string: '{"akid": ".10556243.z0PClx", "created_at": "2016-01-21T16:20:09.624679",
+        "created_user": true, "fields": {"age": "101", "bar": "Bar", "foo": "Foo"},
+        "id": 60078399, "ip_address": "79.148.222.134", "is_forwarded": false, "link":
+        null, "mailing": null, "opq_id": "", "page": "/rest/v1/petitionpage/8651/",
+        "redirect_url": "/cms/thanks/foo-bar/?action_id=60078399&akid=.10556243.z0PClx&ar=1&rd=1",
+        "referring_mailing": null, "referring_user": null, "resource_uri": "/rest/v1/petitionaction/60078399/",
+        "source": "restful_api", "status": "complete", "subscribed_user": true, "taf_emails_sent":
+        null, "type": "Petition", "updated_at": "2016-01-21T16:20:09.659505", "user":
+        "/rest/v1/user/10556243/"}'
+    http_version: 
+  recorded_at: Thu, 21 Jan 2016 16:20:09 GMT
+recorded_with: VCR 3.0.1
