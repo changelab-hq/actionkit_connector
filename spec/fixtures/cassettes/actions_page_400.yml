@@ -1,0 +1,41 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://<USERNAME>:<PASSWORD>@act.sumofus.org/rest/v1/action/
+    body:
+      encoding: UTF-8
+      string: '{"name":"Pablo José Francisco de María","postal":"W1","address1":"The
+        Lodge","address2":"High Street","city":"London","country":"United Kingdom","action_age":"101","action_foo":"Foo","action_bar":"Bar","ignored":"ignore
+        me","page":"foo-bar","email":"foo+113@example.com","page":"i-do-not-exist-xyz-123"}'
+    headers:
+      Content-Type:
+      - application/json
+      Charset:
+      - UTF-8
+  response:
+    status:
+      code: 400
+      message: BAD REQUEST
+    headers:
+      Date:
+      - Thu, 21 Jan 2016 16:32:27 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Machine-Id:
+      - web-g02-02.actionkit.com
+      Vary:
+      - Cookie,Accept-Encoding,User-Agent
+      Set-Cookie:
+      - sid=g6ncahy36te1uqxfnne8gn8mu5e4dkyn; expires=Fri, 22-Jan-2016 00:20:10 GMT;
+        httponly; Max-Age=28800; Path=/
+    body:
+      encoding: UTF-8
+      string: '{"page": "Unable to find a page for processing. You sent page=i-do-not-exist-xyz-123."}'
+    http_version: 
+  recorded_at: Thu, 21 Jan 2016 16:20:11 GMT
+recorded_with: VCR 3.0.1

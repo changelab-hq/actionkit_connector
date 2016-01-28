@@ -1,12 +1,11 @@
-require_relative 'actionkit_connector/version'
 require 'httparty'
 
 module ActionKitConnector
   class Connector
     include HTTParty
+    headers({'Content-Type' => 'application/json', 'charset' => 'UTF-8'})
+    base_uri 'https://act.sumofus.org/rest/v1'
 
-    attr_accessor :username
-    attr_accessor :password
     attr_accessor :base_url
 
     # Initializes a connector to the ActionKit API.
@@ -16,14 +15,17 @@ module ActionKitConnector
     # @param [String] username The username of your ActionKit user.
     # @param [String] password The password for your ActionKit user.
     # @param [String] base_url The base url of your ActionKit instance.
-    def initialize(username, password, base_url)
-      self.username = username
-      self.password = password
+    def initialize(username, password, base_url = nil)
+      @username = username
+      @password = password
       self.base_url = base_url
     end
 
     def auth
-      {username: self.username, password: self.password}
+      {
+        username: @username,
+        password: @password
+      }
     end
 
     # Lists petition pages in your instance.
@@ -80,18 +82,14 @@ module ActionKitConnector
       target = "#{self.base_url}/petitionpage/"
       options = {
           basic_auth: self.auth,
-          headers: {
-              'Content-type' => 'application/json; charset=UTF-8'
-          },
-          :body => {
-              :type => 'petitionpage',
-              :hidden => false,
-              :name => name,
-              :title => title,
-              :language => lang,
-              :canonical_url => canonical_url
-          }.to_json,
-          format: :json
+          body: {
+            :type => 'petitionpage',
+            :hidden => false,
+            :name => name,
+            :title => title,
+            :language => lang,
+            :canonical_url => canonical_url
+         }.to_json
       }
       self.class.post(target, options)
     end
@@ -105,37 +103,21 @@ module ActionKitConnector
     def create_donation_page(name, title, lang, canonical_url)
       target = "#{self.base_url}/donationpage/"
       options = {
-          basic_auth: self.auth,
-          headers: {
-              'Content-type' => 'application/json; charset=UTF-8'
-          },
-          :body => {
-              :type => 'donationpage',
-              :hidden => false,
-              :name => name,
-              :title => title,
-              :language => lang,
-              :canonical_url => canonical_url
-          }.to_json,
-          format: :json
+        basic_auth: self.auth,
+        body: {
+          type:           'donationpage',
+          hidden:         false,
+          name:           name,
+          title:          title,
+          language:       lang,
+          canonical_url:  canonical_url
+        }.to_json
       }
       self.class.post(target, options)
     end
 
-    # Creates an action which associates a user with a page.
-    #
-    # @param [String] page_name The ActionKit name of the page on which the action is being taken.
-    # @param [String] email     The email address of the person taking action.
-    def create_action(page_name, email, options={})
-      target = "#{self.base_url}/action/"
-      body = { page: page_name, email: email }.merge self.parse_action_options(options)
-      options = {
-          basic_auth: self.auth,
-          body: body.to_json,
-          format: :json,
-          headers: {'Content-Type' => 'application/json; charset=UTF-8'}
-      }
-      self.class.post(target, options)
+    def create_action(data)
+      self.class.post('/action/', options(data) )
     end
 
     # Creates an action which registers a donation with a user account.
@@ -145,11 +127,8 @@ module ActionKitConnector
       target = "#{self.base_url}/donationpush/"
       options = self.validate_donation_options(options)
       page_opts = {
-          basic_auth: self.auth,
-          body: options.to_json,
-          headers: {
-              'Content-Type' => 'application/json; charset=UTF-8'
-          }
+        basic_auth: self.auth,
+        body: options.to_json
       }
       self.class.post(target, page_opts)
     end
@@ -218,5 +197,12 @@ module ActionKitConnector
         raise 'Donation User options require email and country keys in the hash.'
       end
     end
+
+    private
+
+    def options(data)
+      data.merge( basic_auth: auth, body: data.to_json )
+    end
+
   end
 end
