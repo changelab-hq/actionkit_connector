@@ -89,7 +89,7 @@ describe 'Connector' do
           with(body: request_body)
     end
 
-    it 'creates a donationpush action', :focus do
+    xit 'creates a donationpush action' do
       client.create_donation_action(full_donation_options)
       expect(WebMock).to have_requested(:post, 'http://username:password@api.example.com/donationpush/').
         with(body: request_body, headers: {'Content-Type' => 'application/json', 'charset' => 'UTF-8'})

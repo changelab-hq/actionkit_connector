@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://<USERNAME>:<PASSWORD>@act.sumofus.org/rest/v1/donationpush/
+    body:
+      encoding: UTF-8
+      string: '{"donationpage":{"name":"foo-bar-donation","payment_account":"Default
+        Import Stub"},"order":{"amount":"34.00","card_code":"007","card_num":"4111111111111111","exp_date_month":"12","exp_date_year":"2015"},"user":{"email":"foo+100@example.com"}}'
+    headers:
+      Content-Type:
+      - application/json
+      Charset:
+      - UTF-8
+  response:
+    status:
+      code: 201
+      message: CREATED
+    headers:
+      Date:
+      - Thu, 28 Jan 2016 10:49:54 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Machine-Id:
+      - web-g02-02.actionkit.com
+      Vary:
+      - Accept,Cookie,Accept-Encoding,User-Agent
+      Location:
+      - https://act.sumofus.org/rest/v1/donationaction/60401278/
+      Set-Cookie:
+      - sid=atoy3w3drk8ra94yqpefaqp1eg3f7a4o; expires=Thu, 28-Jan-2016 18:37:25 GMT;
+        httponly; Max-Age=28800; Path=/
+    body:
+      encoding: UTF-8
+      string: '{"akid": ".10555390.Bl7ItH", "created_at": "2016-01-28T10:37:25.808962",
+        "created_user": false, "fields": {}, "id": 60401278, "ip_address": "79.155.45.176",
+        "is_forwarded": false, "link": null, "mailing": null, "opq_id": "", "order":
+        {"account": "Default Import Stub", "action": "/rest/v1/donationaction/60401278/",
+        "card_num_last_four": "1111", "created_at": "2016-01-28T10:37:25.867788",
+        "currency": "USD", "id": 794626, "import_id": null, "orderdetails": [], "orderrecurrings":
+        [], "payment_method": "cc", "resource_uri": "/rest/v1/order/794626/", "shipping_address":
+        null, "status": "completed", "total": "34.00", "total_converted": "34.00",
+        "transactions": ["/rest/v1/transaction/946267/"], "updated_at": "2016-01-28T10:37:25.889031",
+        "user": "/rest/v1/user/10555390/", "user_detail": "/rest/v1/orderuserdetail/794749/"},
+        "page": "/rest/v1/donationpage/8644/", "referring_mailing": null, "referring_user":
+        null, "resource_uri": "/rest/v1/donationaction/60401278/", "source": "restful_api",
+        "status": "complete", "subscribed_user": false, "taf_emails_sent": null, "type":
+        "Donation", "updated_at": "2016-01-28T10:37:25.849070", "user": "/rest/v1/user/10555390/"}'
+    http_version: 
+  recorded_at: Thu, 28 Jan 2016 10:37:26 GMT
+recorded_with: VCR 3.0.1
