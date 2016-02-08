@@ -1,0 +1,40 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://<USERNAME>:<PASSWORD>@act.sumofus.org/rest/v1/petitionpage/
+    body:
+      encoding: UTF-8
+      string: '{"name":"}invalid-name{","title":"Foo Bar"}'
+    headers:
+      Content-Type:
+      - application/json
+      Charset:
+      - UTF-8
+  response:
+    status:
+      code: 400
+      message: BAD REQUEST
+    headers:
+      Date:
+      - Mon, 08 Feb 2016 13:42:12 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Machine-Id:
+      - web-g02-02.actionkit.com
+      Vary:
+      - Cookie,Accept-Encoding,User-Agent
+      Set-Cookie:
+      - sid=2s5px3x0arg6zw90plrblebjwols97io; expires=Mon, 08-Feb-2016 21:29:23 GMT;
+        httponly; Max-Age=28800; Path=/
+    body:
+      encoding: UTF-8
+      string: '{"petitionpage": {"name": ["Enter a valid ''slug'' consisting of letters,
+        numbers, underscores or hyphens."]}}'
+    http_version: 
+  recorded_at: Mon, 08 Feb 2016 13:29:24 GMT
+recorded_with: VCR 3.0.1

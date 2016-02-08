@@ -7,6 +7,22 @@ require './lib/actionkit_connector'
 #
 ENV['AK_U'] = "DummyUsername"
 ENV['AK_P'] = "DummyPassword"
+ENV['AK_H'] = "https://act.sumofus.org/rest/v1/"
+
+module ClientHelper
+  def client
+    ActionKitConnector::Client.new do |c|
+      c.username = ENV['AK_U']
+      c.password = ENV['AK_P']
+      c.host     = "https://act.sumofus.org"
+    end
+  end
+end
+
+RSpec.configure do |c|
+  c.include ClientHelper
+end
+
 
 VCR.configure do |config|
   config.cassette_library_dir = "spec/fixtures/cassettes"
