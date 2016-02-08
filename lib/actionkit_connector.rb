@@ -4,6 +4,6 @@ require 'actionkit_connector/client'
 require 'actionkit_connector/rest/api'
 
 module ActionKitConnector
-  VERSION = '0.3.0'
+  VERSION = '0.3.1'
 end
 

@@ -1,11 +1,10 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'actionkit_connector/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "actionkit_connector"
-  spec.version       = ActionkitConnector::VERSION
+  spec.version       = '0.4.0'
   spec.authors       = ['Eric Boersma']
   spec.email         = ['eric.boersma@gmail.com']
   spec.summary       = %q{A gem for interacting with the ActionKit API.}
