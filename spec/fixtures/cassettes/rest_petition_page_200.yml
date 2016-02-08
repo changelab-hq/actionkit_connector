@@ -1,0 +1,41 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://<USERNAME>:<PASSWORD>@act.sumofus.org/rest/v1/petitionpage/
+    body:
+      encoding: UTF-8
+      string: '{"name":"foo-bar-test-abc-petition","title":"Foo Bar","language":"/rest/v1/language/102/"}'
+    headers:
+      Content-Type:
+      - application/json
+      Charset:
+      - UTF-8
+  response:
+    status:
+      code: 201
+      message: CREATED
+    headers:
+      Date:
+      - Mon, 08 Feb 2016 13:34:52 GMT
+      Content-Type:
+      - text/html; charset=utf-8
+      Content-Length:
+      - '0'
+      Connection:
+      - keep-alive
+      X-Machine-Id:
+      - web-g02-03.actionkit.com
+      Vary:
+      - Accept,Cookie,Accept-Encoding,User-Agent
+      Location:
+      - https://act.sumofus.org/rest/v1/petitionpage/11319/
+      Set-Cookie:
+      - sid=3wh8n751eqfdrrremt8qwgrb6jvkc096; expires=Mon, 08-Feb-2016 21:22:03 GMT;
+        httponly; Max-Age=28800; Path=/
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Mon, 08 Feb 2016 13:22:03 GMT
+recorded_with: VCR 3.0.1

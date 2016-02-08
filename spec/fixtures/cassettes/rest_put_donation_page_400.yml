@@ -1,0 +1,39 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://<USERNAME>:<PASSWORD>@act.sumofus.org/rest/v1/donationpage/99999999999/
+    body:
+      encoding: UTF-8
+      string: '{"tags":["/rest/v1/tag/1405/","/rest/v1/tag/518/"],"id":"99999999999"}'
+    headers:
+      Content-Type:
+      - application/json
+      Charset:
+      - UTF-8
+  response:
+    status:
+      code: 400
+      message: BAD REQUEST
+    headers:
+      Date:
+      - Mon, 08 Feb 2016 14:21:42 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Machine-Id:
+      - web-g02-01.actionkit.com
+      Vary:
+      - Cookie,Accept-Encoding,User-Agent
+      Set-Cookie:
+      - sid=ny4hbml6nfu83yfffjap516zwkh68kgc; expires=Mon, 08-Feb-2016 22:08:53 GMT;
+        httponly; Max-Age=28800; Path=/
+    body:
+      encoding: UTF-8
+      string: '{"donationpage": {"name": ["This field is required."]}}'
+    http_version: 
+  recorded_at: Mon, 08 Feb 2016 14:08:53 GMT
+recorded_with: VCR 3.0.1

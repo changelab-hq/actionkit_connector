@@ -4,17 +4,17 @@ module ActionKitConnector
   class Connector
     include HTTParty
     headers({'Content-Type' => 'application/json', 'charset' => 'UTF-8'})
-    base_uri 'https://act.sumofus.org/rest/v1'
 
     attr_accessor :base_url
 
     def create_action(data)
-      self.class.post('/action/', options(data))
+      self.class.post('/action/', prep_options(data))
     end
 
     def create_donation_action(data)
-      self.class.post('/donationpush/', options(data))
+      self.class.post('/donationpush/', prep_options(data))
     end
+
 
     # Initializes a connector to the ActionKit API.
     # A new connection is created on each call, so there
@@ -23,17 +23,11 @@ module ActionKitConnector
     # @param [String] username The username of your ActionKit user.
     # @param [String] password The password for your ActionKit user.
     # @param [String] base_url The base url of your ActionKit instance.
-    def initialize(username, password, base_url = nil)
+    def initialize(username, password, base_url)
       @username = username
       @password = password
-      self.base_url = base_url
-    end
-
-    def auth
-      {
-        username: @username,
-        password: @password
-      }
+      @base_url = base_url
+      self.class.base_uri(base_url)
     end
 
     # Lists petition pages in your instance.
@@ -191,10 +185,17 @@ module ActionKitConnector
       end
     end
 
+    def auth
+      {
+        username: @username,
+        password: @password
+      }
+    end
+
     private
 
-    def options(data)
-      data.merge( basic_auth: auth, body: data.to_json )
+    def prep_options(data)
+      { basic_auth: auth, body: data.to_json }
     end
   end
 end
