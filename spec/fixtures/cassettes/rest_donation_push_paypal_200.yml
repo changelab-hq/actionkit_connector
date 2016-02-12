@@ -5,7 +5,7 @@ http_interactions:
     uri: https://<USERNAME>:<PASSWORD>@act.sumofus.org/rest/v1/donationpush/
     body:
       encoding: UTF-8
-      string: '{"donationpage":{"name":"foo-bar-donation","payment_account":"Braintree
+      string: '{"donationpage":{"name":"foo-bar-donation","payment_account":"PayPal
         EUR"},"order":{"amount":"34.00","card_code":"007","card_num":"4111111111111111","exp_date_month":"12","exp_date_year":"2015","currency":"GBP"},"user":{"email":"foo+9991@example.com","country":"United
         Kingdom","action_foo":"Foo","ignore":"ignore this","postal":"W1"},"action":{"source":"FB"}}'
     headers:
@@ -19,7 +19,7 @@ http_interactions:
       message: CREATED
     headers:
       Date:
-      - Thu, 11 Feb 2016 16:53:04 GMT
+      - Thu, 11 Feb 2016 16:53:05 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -27,30 +27,30 @@ http_interactions:
       Connection:
       - keep-alive
       X-Machine-Id:
-      - web-g02-01.actionkit.com
+      - web-g02-02.actionkit.com
       Vary:
       - Accept,Cookie,Accept-Encoding,User-Agent
       Location:
-      - https://act.sumofus.org/rest/v1/donationaction/61065122/
+      - https://act.sumofus.org/rest/v1/donationaction/61065123/
       Set-Cookie:
-      - sid=x707kha29rhuubqk7prre2paxzlsj0pp; expires=Fri, 12-Feb-2016 00:40:09 GMT;
+      - sid=qwptw0q9gcva0ge9q99ywks0yp1eulfs; expires=Fri, 12-Feb-2016 00:40:10 GMT;
         httponly; Max-Age=28800; Path=/
     body:
       encoding: UTF-8
-      string: '{"akid": ".10758557.g1LQyi", "created_at": "2016-02-11T16:40:09.471856",
-        "created_user": false, "fields": {"foo": "Foo"}, "id": 61065122, "ip_address":
+      string: '{"akid": ".10758557.g1LQyi", "created_at": "2016-02-11T16:40:10.744929",
+        "created_user": false, "fields": {"foo": "Foo"}, "id": 61065123, "ip_address":
         "88.107.225.185", "is_forwarded": false, "link": null, "mailing": null, "opq_id":
-        "", "order": {"account": "Braintree EUR", "action": "/rest/v1/donationaction/61065122/",
-        "card_num_last_four": "1111", "created_at": "2016-02-11T16:40:09.551360",
-        "currency": "GBP", "id": 802839, "import_id": null, "orderdetails": [], "orderrecurrings":
-        [], "payment_method": "cc", "resource_uri": "/rest/v1/order/802839/", "shipping_address":
+        "", "order": {"account": "PayPal EUR", "action": "/rest/v1/donationaction/61065123/",
+        "card_num_last_four": "1111", "created_at": "2016-02-11T16:40:10.799068",
+        "currency": "GBP", "id": 802840, "import_id": null, "orderdetails": [], "orderrecurrings":
+        [], "payment_method": "cc", "resource_uri": "/rest/v1/order/802840/", "shipping_address":
         null, "status": "completed", "total": "34.00", "total_converted": "49.1863270156",
-        "transactions": ["/rest/v1/transaction/957510/"], "updated_at": "2016-02-11T16:40:09.565936",
-        "user": "/rest/v1/user/10758557/", "user_detail": "/rest/v1/orderuserdetail/802963/"},
+        "transactions": ["/rest/v1/transaction/957511/"], "updated_at": "2016-02-11T16:40:10.814054",
+        "user": "/rest/v1/user/10758557/", "user_detail": "/rest/v1/orderuserdetail/802964/"},
         "page": "/rest/v1/donationpage/8644/", "referring_mailing": null, "referring_user":
-        null, "resource_uri": "/rest/v1/donationaction/61065122/", "source": "FB",
+        null, "resource_uri": "/rest/v1/donationaction/61065123/", "source": "FB",
         "status": "complete", "subscribed_user": false, "taf_emails_sent": null, "type":
-        "Donation", "updated_at": "2016-02-11T16:40:09.578596", "user": "/rest/v1/user/10758557/"}'
+        "Donation", "updated_at": "2016-02-11T16:40:10.829651", "user": "/rest/v1/user/10758557/"}'
     http_version: 
-  recorded_at: Thu, 11 Feb 2016 16:40:09 GMT
+  recorded_at: Thu, 11 Feb 2016 16:40:10 GMT
 recorded_with: VCR 3.0.1

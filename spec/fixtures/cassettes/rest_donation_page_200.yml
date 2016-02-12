@@ -5,7 +5,7 @@ http_interactions:
     uri: https://<USERNAME>:<PASSWORD>@act.sumofus.org/rest/v1/donationpage/
     body:
       encoding: UTF-8
-      string: '{"name":"foo-bar-test-abc-donation","title":"Foo Bar"}'
+      string: '{"name":"foo-bar-test-abcd-donation","title":"Foo Bar"}'
     headers:
       Content-Type:
       - application/json
@@ -17,7 +17,7 @@ http_interactions:
       message: CREATED
     headers:
       Date:
-      - Mon, 08 Feb 2016 13:48:03 GMT
+      - Thu, 11 Feb 2016 17:10:42 GMT
       Content-Type:
       - text/html; charset=utf-8
       Content-Length:
@@ -29,13 +29,13 @@ http_interactions:
       Vary:
       - Accept,Cookie,Accept-Encoding,User-Agent
       Location:
-      - https://act.sumofus.org/rest/v1/donationpage/11320/
+      - https://act.sumofus.org/rest/v1/donationpage/11363/
       Set-Cookie:
-      - sid=xocjv8bv654dyhg4c0p2nqae8370ute9; expires=Mon, 08-Feb-2016 21:35:14 GMT;
+      - sid=nj5uqdl2inmfvv0tiux92z7v3c8dfq5p; expires=Fri, 12-Feb-2016 00:57:47 GMT;
         httponly; Max-Age=28800; Path=/
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Mon, 08 Feb 2016 13:35:14 GMT
+  recorded_at: Thu, 11 Feb 2016 16:57:47 GMT
 recorded_with: VCR 3.0.1

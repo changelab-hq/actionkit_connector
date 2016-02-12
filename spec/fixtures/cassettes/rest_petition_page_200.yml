@@ -5,7 +5,7 @@ http_interactions:
     uri: https://<USERNAME>:<PASSWORD>@act.sumofus.org/rest/v1/petitionpage/
     body:
       encoding: UTF-8
-      string: '{"name":"foo-bar-test-abc-petition","title":"Foo Bar","language":"/rest/v1/language/102/"}'
+      string: '{"name":"foo-bar-test-abcd-petition","title":"Foo Bar"}'
     headers:
       Content-Type:
       - application/json
@@ -17,25 +17,25 @@ http_interactions:
       message: CREATED
     headers:
       Date:
-      - Mon, 08 Feb 2016 13:34:52 GMT
+      - Thu, 11 Feb 2016 17:09:52 GMT
       Content-Type:
       - text/html; charset=utf-8
-      Content-Length:
-      - '0'
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
       X-Machine-Id:
-      - web-g02-03.actionkit.com
+      - web-g02-02.actionkit.com
       Vary:
       - Accept,Cookie,Accept-Encoding,User-Agent
       Location:
-      - https://act.sumofus.org/rest/v1/petitionpage/11319/
+      - https://act.sumofus.org/rest/v1/petitionpage/11362/
       Set-Cookie:
-      - sid=3wh8n751eqfdrrremt8qwgrb6jvkc096; expires=Mon, 08-Feb-2016 21:22:03 GMT;
+      - sid=x8pwgmii4w5fty0lukodagx7l7effh2w; expires=Fri, 12-Feb-2016 00:56:58 GMT;
         httponly; Max-Age=28800; Path=/
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Mon, 08 Feb 2016 13:22:03 GMT
+  recorded_at: Thu, 11 Feb 2016 16:56:58 GMT
 recorded_with: VCR 3.0.1

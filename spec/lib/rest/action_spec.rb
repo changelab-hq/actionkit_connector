@@ -18,7 +18,6 @@ describe ActionKitConnector::REST::Action do
         ignored:      "ignore me",
         page:         "foo-bar",
         email:        "foo+113@example.com"
-
       }
     end
 

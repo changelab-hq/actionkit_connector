@@ -4,7 +4,7 @@ describe ActionKitConnector::REST::Page do
   describe '#create_petition_page' do
     let(:data) do
       {
-        name:     "foo-bar-test-abc-petition",
+        name:     "foo-bar-test-abcd-petition",
         title:    "Foo Bar"
       }
     end
@@ -83,7 +83,7 @@ describe ActionKitConnector::REST::Page do
   describe '#create_donation_page' do
     let(:data) do
       {
-        name:     "foo-bar-test-abc-donation",
+        name:     "foo-bar-test-abcd-donation",
         title:    "Foo Bar"
       }
     end
