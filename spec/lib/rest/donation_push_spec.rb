@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe ActionKitConnector::REST::Action do
+describe ActionKitConnector::REST::DonationPush do
 
   describe '#create_donation_action' do
     let(:data) do

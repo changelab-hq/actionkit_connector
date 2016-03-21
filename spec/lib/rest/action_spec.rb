@@ -35,8 +35,25 @@ describe ActionKitConnector::REST::Action do
       end
     end
 
-    context 'non existent page' do
+    context 'with custom user fields' do
+      it 'returns the created action' do
+        data[:user_es] = 1
+        data[:email]  = "foo+1131@example.com"
 
+        VCR.use_cassette('rest_action_custom_user_fields_202') do
+          expected = {
+            'created_user' => false,
+            'status'       => 'complete',
+            'type'         => 'Petition',
+            'fields'       => { 'age' => '101', 'bar' => 'Bar', 'foo' => 'Foo' }
+          }
+
+         expect( client.create_action(data) ).to include( expected )
+        end
+      end
+    end
+
+    context 'non existent page' do
       it 'returns 400' do
         VCR.use_cassette('rest_action_400') do
           data['page']  = 'i-do-not-exist-xyz-123'
