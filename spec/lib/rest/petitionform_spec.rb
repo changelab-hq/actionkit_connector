@@ -10,7 +10,7 @@ describe ActionKitConnector::REST::Petitionform do
     end
 
     before do
-      stub_request(:post, "https://user:pass@act.sumofus.org/rest/v1/petitionform/")
+      stub_request(:post, "https://DummyUsername:DummyPassword@act.sumofus.org/rest/v1/petitionform/")
     end
 
     it 'creates a new petitionform' do
@@ -21,4 +21,3 @@ describe ActionKitConnector::REST::Petitionform do
     end
   end
 end
-

@@ -17,22 +17,10 @@ describe ActionKitConnector::REST::Action do
         action_bar:   "Bar",
         ignored:      "ignore me",
         page:         "foo-bar",
-        email:        "foo+113@example.com"
+        email:        "foo+113@example.com",
+        phone:        "234234234",
+
       }
-    end
-
-    it 'returns the created action' do
-
-      VCR.use_cassette('rest_action_200') do
-        expected = {
-          'created_user' => false,
-          'status'       => 'complete',
-          'type'         => 'Petition',
-          'fields'       => { 'age' => '101', 'bar' => 'Bar', 'foo' => 'Foo' }
-        }
-
-        expect( client.create_action(data) ).to include( expected )
-      end
     end
 
     context 'with custom user fields' do

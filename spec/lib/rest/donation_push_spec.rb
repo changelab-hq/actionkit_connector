@@ -7,18 +7,20 @@ describe ActionKitConnector::REST::DonationPush do
       {
         donationpage: {
           name: 'foo-bar-donation',
-          payment_account: 'Braintree EUR'
+          payment_account: 'Braintree EUR',
+          status: 'pending'
         },
         order: {
-          amount:         "34.00",
+          amount:         "1.00",
           card_code:      "007",
           card_num:       "4111111111111111",
           exp_date_month: "12",
           exp_date_year:  "2015",
-          currency:       "GBP"
+          currency:       "GBP",
+          status:         "failed"
         },
         user: {
-          email:      'foo+9991@example.com',
+          email:      'test@example.com',
           country:    'United Kingdom',
           action_foo: 'Foo',
           ignore:     'ignore this',
@@ -26,7 +28,9 @@ describe ActionKitConnector::REST::DonationPush do
         },
         action: {
           source:     "FB",
-        }
+          status: 'pending'
+        },
+        stauts: 'pending'
       }
     end
 
@@ -67,7 +71,6 @@ describe ActionKitConnector::REST::DonationPush do
         it "has Braintree for order account" do
           expect(subject.fetch('account')).to eq('Braintree EUR')
         end
-
       end
     end
 

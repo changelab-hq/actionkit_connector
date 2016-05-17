@@ -10,7 +10,7 @@ describe ActionKitConnector::REST::Donationform do
     end
 
     before do
-      stub_request(:post, "https://user:pass@act.sumofus.org/rest/v1/donationform/")
+      stub_request(:post, "https://DummyUsername:DummyPassword@act.sumofus.org/rest/v1/donationform/")
     end
 
     it 'creates a new donationform' do
