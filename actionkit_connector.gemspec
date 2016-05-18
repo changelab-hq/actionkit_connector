@@ -4,12 +4,12 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = "actionkit_connector"
-  spec.version       = '0.4.2'
-  spec.authors       = ['Eric Boersma']
-  spec.email         = ['eric.boersma@gmail.com']
+  spec.version       = '0.4.3'
+  spec.authors       = ['SumOfUs']
+  spec.email         = ['']
   spec.summary       = %q{A gem for interacting with the ActionKit API.}
   spec.description   = %q{}
-  spec.homepage      = 'https://github.com/EricBoersma/actionkit_connector'
+  spec.homepage      = 'https://github.com/sumofus/actionkit_connector'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0")
