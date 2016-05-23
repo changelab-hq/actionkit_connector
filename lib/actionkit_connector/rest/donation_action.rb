@@ -2,12 +2,12 @@ module ActionKitConnector
   module REST
     module DonationAction
 
-      def get_donation_action(data)
-        self.class.delete('/donationaction/', prep_options(data))
+      def get_donation_action(id)
+        self.class.get("/donationaction/#{id}", basic_auth)
       end
 
-      def delete_donation_action(data)
-        self.class.delete('/donationaction/', prep_options(data))
+      def delete_donation_action(id)
+        self.class.delete("/donationaction/#{id}/", basic_auth)
       end
     end
   end

@@ -31,7 +31,11 @@ module ActionKitConnector
     end
 
     def prep_options(data)
-      { basic_auth: credentials, body: data.to_json }
+      basic_auth.merge(body: data.to_json)
+    end
+
+    def basic_auth
+      { basic_auth: credentials }
     end
 
     def base_uri
