@@ -6,6 +6,7 @@ require 'actionkit_connector/rest/recurring_payment_push'
 require 'actionkit_connector/rest/petitionform'
 require 'actionkit_connector/rest/order'
 require 'actionkit_connector/rest/donation_action'
+require 'actionkit_connector/rest/user'
 
 
 module ActionKitConnector
@@ -20,6 +21,7 @@ module ActionKitConnector
       include ActionKitConnector::REST::Petitionform
       include ActionKitConnector::REST::PageFollowUp
       include ActionKitConnector::REST::Order
+      include ActionKitConnector::REST::User
     end
   end
 end
