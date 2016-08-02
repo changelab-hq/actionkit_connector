@@ -13,3 +13,4 @@ mkmf.log
 .idea/
 *.iml
 local_test.rb
+.ruby-gemset
