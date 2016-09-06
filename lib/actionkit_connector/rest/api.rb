@@ -8,6 +8,7 @@ require 'actionkit_connector/rest/petitionform'
 require 'actionkit_connector/rest/order'
 require 'actionkit_connector/rest/donation_action'
 require 'actionkit_connector/rest/language'
+require 'actionkit_connector/rest/tag'
 
 
 module ActionKitConnector
@@ -24,6 +25,7 @@ module ActionKitConnector
       include ActionKitConnector::REST::PageFollowUp
       include ActionKitConnector::REST::Order
       include ActionKitConnector::REST::Language
+      include ActionKitConnector::REST::Tag
     end
   end
 end

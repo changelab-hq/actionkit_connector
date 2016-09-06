@@ -41,5 +41,21 @@ module ActionKitConnector
     def base_uri
       URI.join(host, '/rest/v1/').to_s
     end
+
+    def pager_for(uri)
+      Enumerator.new do |yielder|
+        query = { _offset: 0, _limit: 100 }
+        options = prep_options({}).merge(query: query)
+
+        loop do
+          response = self.class.get(uri, options)
+          yielder << response
+          if response.code != 200 || response.parsed_response['meta']['next'].blank?
+            break
+          end
+          query[:_offset] += 100
+        end
+      end
+    end
   end
 end
