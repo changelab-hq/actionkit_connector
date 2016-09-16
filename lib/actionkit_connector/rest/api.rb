@@ -9,7 +9,7 @@ require 'actionkit_connector/rest/order'
 require 'actionkit_connector/rest/donation_action'
 require 'actionkit_connector/rest/language'
 require 'actionkit_connector/rest/tag'
-
+require 'actionkit_connector/rest/user'
 
 module ActionKitConnector
   module REST
@@ -26,6 +26,7 @@ module ActionKitConnector
       include ActionKitConnector::REST::Order
       include ActionKitConnector::REST::Language
       include ActionKitConnector::REST::Tag
+      include ActionKitConnector::REST::User
     end
   end
 end

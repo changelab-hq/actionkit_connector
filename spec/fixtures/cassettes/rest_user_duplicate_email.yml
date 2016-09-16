@@ -1,0 +1,43 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://<USERNAME>:<PASSWORD>@act.sumofus.org/rest/v1/user/8244194/
+    body:
+      encoding: UTF-8
+      string: '{"akid":"8244194","email":"test@example.com","first_name":"testy","last_name":"test","country":"United
+        States","city":"San Francisco","postal":"94103","address1":"Jam Factory 123","address2":"Random
+        address"}'
+    headers:
+      Content-Type:
+      - application/json
+      Charset:
+      - UTF-8
+  response:
+    status:
+      code: 409
+      message: CONFLICT
+    headers:
+      Date:
+      - Fri, 19 Aug 2016 13:22:41 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Machine-Id:
+      - web-g02-03.actionkit.com
+      Vary:
+      - Cookie,Accept-Encoding,User-Agent
+      Location:
+      - https://act.sumofus.org/rest/v1/user/991564/
+      Set-Cookie:
+      - sid=xoe3vccwawt1w8p3sjd411v7vn9t950r; expires=Fri, 19-Aug-2016 21:22:41 GMT;
+        httponly; Max-Age=28800; Path=/
+    body:
+      encoding: UTF-8
+      string: '{"errors": {"email": ["Conflict on unique key ''email'' for value ''test@example.com''"]}}'
+    http_version: 
+  recorded_at: Fri, 19 Aug 2016 13:22:41 GMT
+recorded_with: VCR 3.0.1
