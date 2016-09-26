@@ -46,6 +46,23 @@ describe ActionKitConnector::REST::User do
         end
       end
     end
+
+    context 'with custom user fields' do
+      let (:custom_field_params) do
+        {
+          fields: {
+            express_account: 1
+          }
+        }
+      end
+      it 'updates the custom user fields' do
+        VCR.use_cassette('rest_user_custom_fieds') do
+          resp = client.update_user(params[:akid], custom_field_params)
+          expect(resp.response.class).to eq Net::HTTPNoContent
+          expect(resp.response.code.to_i).to eq 204
+        end
+      end
+    end
   end
 end
 
