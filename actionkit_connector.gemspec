@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = "actionkit_connector"
-  spec.version       = '0.4.3'
+  spec.version       = '0.4.4'
   spec.authors       = ['SumOfUs']
   spec.email         = ['']
   spec.summary       = %q{A gem for interacting with the ActionKit API.}
