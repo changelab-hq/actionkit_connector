@@ -52,19 +52,19 @@ describe ActionKitConnector::REST::Page do
 
     context 'valid request' do
       subject do
-        VCR.use_cassette('rest_put_petition_page_204') do
+        VCR.use_cassette('rest_patch_petition_page_202') do
           client.update_petition_page(data)
         end
       end
 
-      it 'returns 204' do
-        expect(subject.response.code).to eq("204")
+      it 'returns 202' do
+        expect(subject.response.code).to eq("202")
       end
     end
 
     context 'invalid request' do
       subject do
-        VCR.use_cassette('rest_put_petition_page_400') do
+        VCR.use_cassette('rest_patch_petition_page_404') do
           client.update_petition_page(data)
         end
       end
@@ -73,9 +73,8 @@ describe ActionKitConnector::REST::Page do
         data[:id] = "99999999999" # No page with this ID exists
       end
 
-      it 'returns 400' do
-        # ActionKit responds incorrectly with "petitionpage"=>{"name"=>["This field is required."]}
-        expect(subject.response.code).to eq("400")
+      it 'returns 404' do
+        expect(subject.response.code).to eq("404")
       end
     end
   end
@@ -131,19 +130,19 @@ describe ActionKitConnector::REST::Page do
 
     context 'valid request' do
       subject do
-        VCR.use_cassette('rest_put_donation_page_204') do
+        VCR.use_cassette('rest_patch_donation_page_202') do
           client.update_donation_page(data)
         end
       end
 
-      it 'returns 204' do
-        expect(subject.response.code).to eq("204")
+      it 'returns 202' do
+        expect(subject.response.code).to eq('202')
       end
     end
 
     context 'invalid request' do
       subject do
-        VCR.use_cassette('rest_put_donation_page_400') do
+        VCR.use_cassette('rest_patch_donation_page_404') do
           client.update_donation_page(data)
         end
       end
@@ -152,11 +151,9 @@ describe ActionKitConnector::REST::Page do
         data[:id] = "99999999999" # No page with this ID exists
       end
 
-      it 'returns 400' do
-        # ActionKit responds incorrectly with "petitionpage"=>{"name"=>["This field is required."]}
-        expect(subject.response.code).to eq("400")
+      it 'returns 404' do
+        expect(subject.response.code).to eq('404')
       end
     end
   end
 end
-
