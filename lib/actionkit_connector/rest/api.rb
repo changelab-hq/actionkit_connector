@@ -11,6 +11,7 @@ require 'actionkit_connector/rest/language'
 require 'actionkit_connector/rest/tag'
 require 'actionkit_connector/rest/user'
 require 'actionkit_connector/rest/recurring_payment_cancellation'
+require 'actionkit_connector/rest/petition_action'
 
 module ActionKitConnector
   module REST
@@ -29,6 +30,7 @@ module ActionKitConnector
       include ActionKitConnector::REST::Tag
       include ActionKitConnector::REST::User
       include ActionKitConnector::REST::RecurringPaymentCancellation
+      include ActionKitConnector::REST::PetitionAction
     end
   end
 end
