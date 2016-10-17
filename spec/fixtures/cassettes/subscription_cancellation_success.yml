@@ -5,7 +5,7 @@ http_interactions:
     uri: https://<USERNAME>:<PASSWORD>@act.sumofus.org/rest/v1/profilecancelpush/
     body:
       encoding: UTF-8
-      string: '{"recurring_id":"64zrcr"}'
+      string: '{"recurring_id":"5b33x6","canceled_by":"user"}'
     headers:
       Content-Type:
       - application/json
@@ -13,22 +13,22 @@ http_interactions:
       - UTF-8
   response:
     status:
-      code: 401
-      message: UNAUTHORIZED
+      code: 201
+      message: CREATED
     headers:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Thu, 13 Oct 2016 00:44:16 GMT
+      - Mon, 17 Oct 2016 23:11:57 GMT
+      Location:
+      - https://act.sumofus.org/rest/v1/transaction/1214232/
       Server:
       - nginx
       Set-Cookie:
-      - sid=ez769vqp031jhdajm3aj8zeqip7f9w4d; expires=Thu, 13-Oct-2016 08:44:16 GMT;
+      - sid=0csmyjqn4bcz4bsd4dh3k3dzy2ztpp91; expires=Tue, 18-Oct-2016 07:11:57 GMT;
         httponly; Max-Age=28800; Path=/
       Vary:
-      - Cookie,Accept-Encoding,User-Agent
-      Www-Authenticate:
-      - Basic Realm="django-tastypie"
+      - Accept,Cookie,Accept-Encoding,User-Agent
       X-Machine-Id:
       - ip-10-50-2-90
       Content-Length:
@@ -39,5 +39,5 @@ http_interactions:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Thu, 13 Oct 2016 00:44:16 GMT
+  recorded_at: Mon, 17 Oct 2016 23:11:57 GMT
 recorded_with: VCR 3.0.1

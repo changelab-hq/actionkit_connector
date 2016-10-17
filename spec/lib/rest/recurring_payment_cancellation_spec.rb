@@ -5,13 +5,13 @@ describe ActionKitConnector::REST::RecurringPaymentCancellation do
 
     subject(:request) do
       VCR.use_cassette('subscription cancellation success') do
-        client.cancel_subscription(recurring_id: '64zrcr')
+        @response=client.cancel_subscription(recurring_id: '5b33x6', canceled_by: 'user')
       end
     end
 
-    it 'cancels the subscription' do
+    it 'marks the subscription cancelled and gets a success code back' do
       subject
-      #TODO: assertions and such
+      expect(@response.code).to eq(201)
     end
 
   end
