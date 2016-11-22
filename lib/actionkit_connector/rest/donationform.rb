@@ -12,14 +12,3 @@ module ActionKitConnector
     end
   end
 end
-
-module ActionKitConnector
-  module REST
-    module PageFollowUp
-      def create_page_follow_up(data)
-        self.class.post('/pagefollowup/', prep_options(data))
-      end
-    end
-  end
-end
-
