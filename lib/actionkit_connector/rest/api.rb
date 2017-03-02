@@ -13,6 +13,7 @@ require 'actionkit_connector/rest/user'
 require 'actionkit_connector/rest/recurring_payment_cancellation'
 require 'actionkit_connector/rest/petition_action'
 require 'actionkit_connector/rest/page_follow_up'
+require 'actionkit_connector/rest/recurring_payment_update'
 
 module ActionKitConnector
   module REST
@@ -33,6 +34,7 @@ module ActionKitConnector
       include ActionKitConnector::REST::RecurringPaymentCancellation
       include ActionKitConnector::REST::PetitionAction
       include ActionKitConnector::REST::PageFollowUp
+      include ActionKitConnector::REST::RecurringPaymentUpdate
     end
   end
 end

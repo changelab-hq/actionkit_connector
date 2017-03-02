@@ -1,0 +1,43 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://<USERNAME>:<PASSWORD>@act.sumofus.org/rest/v1/profileupdatepush/
+    body:
+      encoding: UTF-8
+      string: '{"recurring_id":"5b33x6","amount":7}'
+    headers:
+      Content-Type:
+      - application/json
+      Charset:
+      - UTF-8
+  response:
+    status:
+      code: 201
+      message: CREATED
+    headers:
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Thu, 02 Mar 2017 11:17:27 GMT
+      Location:
+      - https://act.sumofus.org/rest/v1/transaction/1454636/
+      Server:
+      - nginx
+      Set-Cookie:
+      - sid=zjj1nqta2vo41r3ez7siw9hb4u1hht1j; expires=Thu, 02-Mar-2017 19:17:27 GMT;
+        httponly; Max-Age=28800; Path=/
+      Vary:
+      - Accept,Cookie,Accept-Encoding,User-Agent
+      X-Machine-Id:
+      - ip-10-50-2-25
+      Content-Length:
+      - '0'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Thu, 02 Mar 2017 11:17:27 GMT
+recorded_with: VCR 3.0.1
