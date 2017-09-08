@@ -12,4 +12,3 @@ module ActionKitConnector
     end
   end
 end
-
