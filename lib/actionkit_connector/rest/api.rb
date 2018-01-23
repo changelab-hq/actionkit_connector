@@ -35,6 +35,10 @@ module ActionKitConnector
       include ActionKitConnector::REST::PetitionAction
       include ActionKitConnector::REST::PageFollowUp
       include ActionKitConnector::REST::RecurringPaymentUpdate
+
+      def run_sql_query(query)
+        self.class.post('/report/run/sql/', prep_options({ query: query, cache_duration: 0 }))
+      end
     end
   end
 end
