@@ -15,6 +15,20 @@ module ActionKitConnector
       self.class.post('/donationpush/', prep_options(data))
     end
 
+    def batch_upsert_users(page_name, file, other_params)
+      params = {
+        basic_auth: self.auth,
+        body: {
+          upload: file,
+          page: page_name,
+        }.merge(other_params)
+      }
+      self.class.post('/upload/', params)
+    end
+
+    def get_upload(id)
+      self.class.get("/upload/#{id}/", { basic_auth: self.auth })
+    end
 
     # Initializes a connector to the ActionKit API.
     # A new connection is created on each call, so there
