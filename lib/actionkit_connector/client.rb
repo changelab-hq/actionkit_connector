@@ -30,8 +30,8 @@ module ActionKitConnector
       }
     end
 
-    def prep_options(data)
-      basic_auth.merge(body: data.to_json)
+    def prep_options(data, other_opts = {})
+      basic_auth.merge(body: data.to_json).merge(other_opts)
     end
 
     def basic_auth

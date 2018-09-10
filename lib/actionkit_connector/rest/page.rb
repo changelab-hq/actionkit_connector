@@ -1,7 +1,6 @@
 module ActionKitConnector
   module REST
     module Page
-
       def create_petition_page(data)
         self.class.post('/petitionpage/', prep_options(data))
       end
