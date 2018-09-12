@@ -8,7 +8,6 @@ module ActionKitConnector
           query = {}
         end
 
-        prep_options({}, {query: query})
         self.class.get('/queryreport/', prep_options({}, {query: query}))
       end
 
