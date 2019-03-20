@@ -12,7 +12,15 @@ module ActionKitConnector
       end
 
       def list_query_reports_in_category(category_id)
-        self.class.get("/reportcategory/#{category_id}/", prep_options({}))
+        response = self.class.get("/reportcategory/#{category_id}/", prep_options({}))
+        report_ids = response['reports'].map{ |r| r['id'] }
+        return report_ids.map{|report_id|
+          self.get_query_report(report_id)
+        }
+      end
+
+      def get_query_report(id)
+        self.class.get("/queryreport/#{id}", prep_options({}))
       end
 
       def run_query_report_async(id)
