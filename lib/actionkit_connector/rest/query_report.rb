@@ -13,14 +13,15 @@ module ActionKitConnector
 
       def list_query_reports_in_category(category_id)
         response = self.class.get("/reportcategory/#{category_id}/", prep_options({}))
-        report_ids = response['reports'].map{ |r| r['id'] }
+        report_ids = response['reports'].map{ |r| r.split("/").last }
         return report_ids.map{|report_id|
-          self.get_query_report(report_id)
+          report = self.get_query_report(report_id)
+          report.slice("id", "name")
         }
       end
 
       def get_query_report(id)
-        self.class.get("/queryreport/#{id}", prep_options({}))
+        self.class.get("/queryreport/#{id}/", prep_options({}))
       end
 
       def run_query_report_async(id)
