@@ -11,6 +11,10 @@ module ActionKitConnector
         self.class.get('/queryreport/', prep_options({}, {query: query}))
       end
 
+      def list_query_reports_in_category(category_id)
+        self.class.get("/reportcategory/#{category_id}/", prep_options({}))
+      end
+
       def run_query_report_async(id)
         puts prep_options({})
         self.class.post("/report/background/#{id}/?format=csv", prep_options({}))
